@@ -13,10 +13,10 @@ int main() {
   cout.precision(2);
 
   //Cost of Coffee
-  void costAndSizeOfCoffee() {
     float priceOfCoffee = 0;
     int ozOfCoffee = 0;
     int amountOfCoffee = 0;
+    float gramConstant = 28.3495;
 
       while (priceOfCoffee <= 0 ) {
         cout << "Price of Coffee: $";
@@ -27,25 +27,8 @@ int main() {
         cout << "Size of Bag (Ounces): ";
         cin >> ozOfCoffee;
       }
-      amountOfCoffee = ouncesToGrams();
-  }
+      //Converts Ounces of Coffee to Grams
+      amountOfCoffee = (ozOfCoffee * gramConstant);
 
-  //Converts Ounces of Coffee to Grams
-  int ouncesToGrams(ozOfCoffee) {
-    int ounces = ozOfCoffee;
-    float gramConstant = 28.3495;
-    int gramsOfCoffee = ounces * gramConstant;
-    return gramsOfCoffee;
-  }
-
-  float calculateCoffeeCostPerGram(priceOfCoffee, amountOfCoffee) {
-    return priceOfCoffee / amountOfCoffee;
-  }
-
-  float costPerCup() {}
-
-
-
-
-
+  cout << amountOfCoffee;
 }

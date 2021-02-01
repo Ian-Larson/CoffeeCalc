@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var sizeOfCoffeeBag = 2
     @State private var drinkSize = 2
     @State private var ratio = 2
+    @State private var shopPrice = ""
     
     @State private var drinkSizes = [240, 350, 475]
     @State private var bagSizes = [115, 285, 340, 450]
@@ -54,6 +55,17 @@ struct ContentView: View {
         else {
             return costPerCoffee
         }
+    }
+    
+    //How much does your coffee cost a coffee shop
+    var priceAtCoffeeShop: Double {
+        let shopPricePerCoffee = Double(shopPrice) ?? 0
+        return (shopPricePerCoffee * numberOfCups)
+    }
+    
+    //Returns the difference between paying for the same number of cups at a shop vs making it yourself
+    var comparePrices: Double {
+        return (priceAtCoffeeShop - costPerBag)
     }
     
     //Calculates the number of cups you can brew per bag
@@ -137,17 +149,33 @@ struct ContentView: View {
                                 Text("\(numberOfCups, specifier: "%.2f")")
                                     .fontWeight(.bold)
                             }
-                        HStack {
-                            Text("Cost of Water Per Cup")
-                            Spacer()
-                            Text("$\(waterCostPerCup, specifier: "%.2f")")
-                                .fontWeight(.bold)
+                            HStack {
+                                Text("Cost of Water Per Cup")
+                                Spacer()
+                                Text("$\(waterCostPerCup, specifier: "%.2f")")
+                                    .fontWeight(.bold)
+                                }
+                                HStack {
+                                    Text("Cost of This Bag: ")
+                                    Spacer()
+                                    Text("$\(costPerBag, specifier: "%.2f")")
+                                        .fontWeight(.bold)
+                                }
                             }
-                        HStack {
-                            Text("Cost of This Bag: ")
-                            Spacer()
-                            Text("$\(costPerBag, specifier: "%.2f")")
-                                .fontWeight(.bold)
+                        Section(header: Text("Compared to Coffee Shop")) {
+                            HStack {
+                                TextField("Your Coffee Shop's Price: $", text: $shopPrice)
+                                    .keyboardType(.decimalPad)
+                                Button("Submit") {
+                                                print("Price: $ \(self.shopPrice)")
+                                                self.hideKeyboard()
+                                }
+                            }
+                            HStack {
+                                Text("You Save:  ")
+                                Spacer()
+                                Text("$\(comparePrices, specifier: "%.2f")")
+                                    .fontWeight(.bold)
                             }
                         }
                     }

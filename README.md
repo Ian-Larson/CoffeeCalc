@@ -2,7 +2,7 @@
 - CoffeeCalc is an iOS app that helps you calculate how much you are spending (or saving!) on making coffee at home
 
 
-![Simulator Screen Shot - iPhone 12 Pro - 2021-03-02 at 14 38 41](https://user-images.githubusercontent.com/60232877/109712116-3bcaec80-7b65-11eb-8b21-8efcc07559ac.png = 100x)
+![Simulator Screen Shot - iPhone 12 Pro - 2021-03-02 at 14 38 41](https://user-images.githubusercontent.com/60232877/109712116-3bcaec80-7b65-11eb-8b21-8efcc07559ac.png)
 
 ### Cost Per Coffee
 The cost is calculated by getting some information about how much everything costs individually.
@@ -17,7 +17,7 @@ Some basic information that can be calculated based on your inputs
 - Cost of Water Per Cup
 - Cost of This Bag: Essentially combines the purchase price of the bag + water + filters to give you a sense of the overall spending
 
-![Simulator Screen Shot - iPhone 12 Pro - 2021-03-02 at 14 38 46](https://user-images.githubusercontent.com/60232877/109713017-55b8ff00-7b66-11eb-876f-3bdd547c3843.png = 208x117)
+![Simulator Screen Shot - iPhone 12 Pro - 2021-03-02 at 14 38 46](https://user-images.githubusercontent.com/60232877/109713017-55b8ff00-7b66-11eb-876f-3bdd547c3843.png)
 
 ### Compared to Coffee Shop
 This section of the app lets you input how much your same drink at your typical coffee ship costs. You can see how much you are saving over the course of your bag of coffee (spoiler: Its probably a lot!)
